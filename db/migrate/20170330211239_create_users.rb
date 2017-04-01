@@ -1,5 +1,5 @@
 class CreateUsers < ActiveRecord::Migration[5.0]
-  def up
+  def change
     create_table :users do |t|
       t.column "first_name", :string, :limit => 25
       #or to make it easier, a shorter syntax
@@ -9,8 +9,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    def down
-    	drop_table :users
-    end
+    #def down
+    #	drop_table :users
+    #end
   end
 end
