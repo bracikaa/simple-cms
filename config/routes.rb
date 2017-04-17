@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  
+
+  resources :subjects do
+    member do
+      get :delete
+    end
+  end
+
   #matching root route
   root 'demo#index'	
 
