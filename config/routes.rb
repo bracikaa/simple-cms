@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+resources :pages do
+    member do
+      get :delete
+  end
+end
+
+  resources :sections do
+    member do
+      get :delete
+    end
+  end
+
   resources :subjects do
     member do
       get :delete
@@ -7,8 +19,8 @@ Rails.application.routes.draw do
   end
 
   #matching root route
-  root 'demo#index'	
-
+  #root ':subjects(:index)'
+  root 'demo#index'
   get 'demo/index'
   get 'demo/hello'
   get 'demo/other_hello'

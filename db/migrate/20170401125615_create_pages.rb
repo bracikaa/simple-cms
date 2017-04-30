@@ -8,7 +8,7 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.boolean "visible", :default => false
       t.timestamps
     end
-
+    
     add_index("pages", "subject_id")
     add_index("pages", "permalink")
   end

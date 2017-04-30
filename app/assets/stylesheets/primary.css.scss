@@ -1,0 +1,165 @@
+
+$red:          #993120;
+$green:        #94B26F;
+$light_green:  #B6D491;
+$yellow:       #F2DC87;
+$dark_brown:   #332318;
+$light_brown:  #4C2516;
+$white: 	   #FFFFFF;
+
+
+
+$sans_serif:  Verdana,Lucida,Arial,Helvetica,sans-serif;
+
+html { height: 100%; width: 100%; }
+
+body { width: 100%; min-width: 980px; height: 100%; margin: 0; padding: 0; 
+  font: 14px $sans_serif; color: #dark_brown; }
+
+p, td, ul, ol, li, dl, dt, dd { 
+  font-family: $sans_serif; }
+img { border: none; }
+
+table { border-collapse: collapse; }
+
+table tr th, table tr td { vertical-align: top; text-align: left; 
+  padding: 3px; }
+a, a:visited { color:  #993120; }
+a:hover {}
+
+.clear { clear: both; }
+.center { text-align: center; }
+
+/* Structure */
+#header {
+	height: 4em;
+	padding-top: 1em;
+	text-align: center;
+	background: #993120;
+	color: $white;
+
+	h1 { margin: 0; padding: 0;}
+}
+
+	#main {
+		min-height: 500px;
+		background: $yellow;
+	}
+
+	#navigation {
+		float: left;
+		width: 180px;
+		min-height: 480px;
+		padding: 10px;
+		background: $green;
+		color: $light_brown;
+	}
+
+	#content {padding: 10px;}
+
+	#footer{
+		background-image: url('footergrad.png');
+		 background-repeat: no-repeat;
+		  background-size: cover;
+		clear: both;
+		height: 2.5em;
+		text-align: right;
+		color: black;
+
+
+	p{
+		margin: 0;
+		padding: 0.5em 1em;
+	}
+}
+
+/* Navigation */
+#navigation ul { list-style: none; margin: 0; padding: 0; }
+#navigation ul li { margin-bottom: 0.5em; }
+#navigation ul ul { margin: 0.5em 0 0 1em; font-size: 0.9em; }
+#navigation a { text-decoration: none; padding: 1px 3px;}
+#navigation a:hover { background: #F2DC87; }
+
+/* Content */
+#content h2 { color: #4C2516; }
+
+
+$breakpoint-alpha: 480px; // adjust to your needs
+
+.rwd-table {
+  margin: 1em 0;
+  min-width: 300px; // adjust to your needs
+  
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+  
+  td {
+    display: block; 
+    
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+      
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+  tr {
+    border-color: lighten(#34495E, 10%);
+  }
+  th, td {
+    margin: .5em 1em;
+    @media (min-width: $breakpoint-alpha) { 
+      padding: 1em !important; 
+    }
+  }
+  th, td:before {
+    color: #dd5;
+  }
+}
