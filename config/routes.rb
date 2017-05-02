@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+ root 'demo#index'
+
+  get 'admin', :to => 'access#menu'
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
+
 resources :pages do
     member do
       get :delete
@@ -20,7 +28,7 @@ end
 
   #matching root route
   #root ':subjects(:index)'
-  root 'demo#index'
+ 
   get 'demo/index'
   get 'demo/hello'
   get 'demo/other_hello'
