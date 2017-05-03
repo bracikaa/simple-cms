@@ -13,7 +13,7 @@ class Section < ApplicationRecord
 
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 255
-	validates_inclusion_of :content_type , :in => ['text', 'HTML'], :message => "must be one of the #{CONTENT_TYPES.join(, )}"
+	validates_inclusion_of :content_type, :in => ['text', 'HTML'], :message => "must be one of the either HTML or text file"
 	validates_presence_of :content
 
 end

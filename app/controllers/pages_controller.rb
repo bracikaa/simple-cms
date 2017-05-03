@@ -74,3 +74,4 @@ class PagesController < ApplicationController
       @page_count += 1
   end
 end
+end
